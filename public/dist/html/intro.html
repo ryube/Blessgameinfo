@@ -1,0 +1,21 @@
+	<!-- <h3>intro</h3> -->
+	<div id="s1" class="section_01 bl_intro">
+		<p class="subtl chars">새로운 세대를 여는 MMORPG의 가치</p>
+		<h3 class="tl">
+			<span class="t b">b</span>
+			<span class="t l">l</span>
+			<span class="t e">e</span>
+			<span class="t s1">s</span>
+			<span class="t s2">s</span>
+			<span class="e-"></span>
+		</h3>
+		<a data-link="#story.html" class="btn_into btn-html">
+			<span class="bg"></span>
+			<span class="c"></span>
+			<span class="bar"><span class="b1"></span><span class="b2"></span></span>
+			<span class="t">Journey into The World</span>
+		</a>
+		<p class="txt chars">그대가 바로 이 세상의 운명을 바꿀 존재 &lt; 아나타바린 &gt;. 미래를 여는 열쇠가 되어 만들어갈 당신의 역사를 기대해 본다.</p>
+		<a href="http://bless.pmang.com/" target="_blank" class="btn_home"><u></u>home</a>
+	</div>
+	<script>var senceAni=function(){Bgi.pageAnimation=!0,Bgi.element.$wrap.removeClass("nav-on foot-on"),setWindowHeight();var t=$(".subtl").texts(),e=$(".tl .t"),o=$(".tl .e-"),a=$(".txt").texts(),n=$(".btn_into"),i=$(".btn_into .c"),l=$(".btn_into .t"),s=$(".bar");mtl=new TimelineMax,mtl.clear(),mtl.set([t,e,o,a],{opacity:0}).set([o],{marginLeft:20}).set(".tl .t",{opacity:0,top:-10}).set(i,{borderWidth:150}).set(n,{scale:0}).set(s,{rotationX:-90,rotationZ:10}).set(l,{marginLeft:-20,opacity:0}),mtl.to(n,.5,{scale:.15}).to(n,.15,{delay:.25,opacity:.5,repeat:3}).to(n,.15,{opacity:1}).to(n,.8,{delay:1,scale:1},"into").to(i,.5,{delay:.6,borderWidth:4},"into").to(s,2,{rotationX:180,rotationZ:0},"into2").to(l,2,{marginLeft:0,opacity:1,ease:Expo.easeOut},"into2").set(n,{className:"+=mover btn-html"});for(var r=0,m=t.length;m>r;r++)mtl.to(t[r],1,{opacity:1,ease:Power2.easeOut},"into2+="+1*Math.random(),"txt1");for(var r=0,m=e.length;m>r;r++)mtl.to(e[r],1,{opacity:1,top:0,ease:Power2.easeOut},"into2-="+.5*Math.random(),"txt2");mtl.to(o,2,{opacity:1,marginLeft:0,ease:Power2.easeOut},"into2","txt2-1").to(o,3,{rotationX:360,ease:Power2.easeOut}),mtl.staggerTo(a,.2,{opacity:1,top:0,ease:Power2.easeOut},.05,"into2"),mtl.pause(),mtl.eventCallback("onComplete",function(){}),mtl.eventCallback("onReverseComplete",function(){Bgi.pageAnimation=!1,mtl.clear(),mtl=null,senceAni=null,window.location.hash=Bgi.hash});var c=function(){mtl.seek(0).play()},p=function(){mtl.timeScale(3).tweenTo(0)};return{aniOut:function(){p()},aniIn:function(){c()}}}()</script>

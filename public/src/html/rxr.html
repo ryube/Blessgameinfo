@@ -1,0 +1,151 @@
+	<div id="s1" class="rxr">
+		<div class="intro_page">
+			<div class="b_tbl"><div class="b_cell">
+				<h3>하이란 VS 우니온, 서로의 이념을 위한 <br />거대한 전쟁의 서막이 열립니다.</h3>
+				<div class="txt">
+					<p>역사적으로 갈등과 반목을 거듭해 왔던 하이란과 우니온, 양 진영의 대립과 전쟁으로 치닫는 극한의 상황에서<br />
+					여러분이 개인의 신념과 의지를 갖고 "무엇을 할 수 있을지" 혹은 "해야 할 것인지"에 대한 질문의 답을 찾아야 합니다.<br />
+					잊지 마십시오. 진영과 종족을 대표하는 영웅은 바로 '당신' 입니다.</p>
+				</div>
+				<a class="btn_c"><span>계속 살펴보기</span></a>
+			</div></div>
+		</div>
+		<div class="rxr_contents">
+			<div class="section c1">
+				<div class="bg"></div><div class="grain"></div>
+				<div class="content">
+					<h2>R x R</h2>
+					<p class="sub_tl">서로의 이념을 지켜내기 위한 거대한 전쟁이 시작됩니다.</p>
+					<div class="video">
+						<b class="bg"></b>
+						<a class="btn_ytplay" data-ytcode="65OMmEhp9I4"><i></i><span>동영상 보기</span></a>
+					</div>
+					<p class="desc">블레스는 진영 간 대립 그리고 진영 내부에서 다양한 갈등 구도가 공존하는 RxR이라는 새로운 전쟁 구도를 갖고 있습니다. RxR은 Realm X Realm의 약자로서 전장부터 수도 쟁탈전까지 각각의 세부 컨텐츠가 서로 긴밀하게 연결되어 있다는 의미를 담고 있습니다.</p>
+					<div class="rxr_img"></div>
+					<div class="btn_box"><a href="#"><span>더 많은 정보 보기<i></i></span></a></div>
+				</div>
+			</div>
+			<div class="section c2">
+				<div class="bg"></div><div class="grain"></div>
+				<div class="content">
+					<h3>카스트라 공방전</h3>
+					<p class="desc">하이란과 우니온 국경지대인 코르누스 산맥의 카스트라 그란디스에 위치한 대규모 전장으로, 전장 참가 아이콘 또는 단축키&lt;B&gt;를 선택하여 입장이 가능합니다. 하이란과 우니온 양 진영은 각각 최대 100명씩 참여할 수 있으며, 제한 시간 내에 상대 진영의 군주 NPC를 죽이거나 또는 더 높은 전장 점수를 획득한 진영이 승리하게 됩니다. 전장에 배치되어 있는 승패의 핵심 요소인 &lt;수호석&gt;과 &lt;정화 나무&gt;를 어떻게 공략하느냐에 따라 전장의 승패가 결정됩니다.</p>
+					<div class="thumb">
+						<img src="../img/rxr/img_c2_1.jpg" alt="">
+						<img src="../img/rxr/img_c2_2.jpg" alt="">
+						<img src="../img/rxr/img_c2_3.jpg" alt="">
+					</div>
+					<div class="btn_box"><a href="#"><span>더 많은 정보 보기<i></i></span></a></div>
+				</div>
+			</div>
+			<div class="section c3">
+				<div class="bg"></div><div class="grain"></div>
+				<div class="content">
+					<h3>통치 계약</h3>
+					<p class="desc">특정 지역을 통치할 수 있는 권한에 대한, 길드(장)와 소속 진영 사이의 계약을 말합니다. RxR을 통해 획득할 수 있는 &lt;길드 영향력&gt;을 이용하여 통치하고자 하는 지역에 입찰할 수 있으며, 통치 계약에 최종 낙찰된 길드장은 주요 도시를 통치하는 영주(하이란) 또는 총독(우니온)이 될 수 있습니다. </p>
+					<div class="thumb">
+						<img src="../img/rxr/img_c3_1.jpg" alt="">
+						<img src="../img/rxr/img_c3_2.jpg" alt="">
+					</div>
+					<div class="btn_box"><a href="#"><span>더 많은 정보 보기<i></i></span></a></div>
+				</div>
+			</div>
+			<div class="section c4">
+				<div class="bg"></div><div class="grain"></div>
+				<div class="content">
+					<h3>수도 쟁탈전</h3>
+					<p class="desc">하이란의 &lt;수호경&gt;과 우니온의 &lt;집정관&gt;에 도전하기 위해 영주(하이란) 또는 총독(우니온)이 벌이는 전쟁을 말합니다. 수도 쟁탈전을 통해 수호경 또는 집정관이 탄생하게 됩니다.</p>
+					<div class="thumb">
+						<img src="../img/rxr/img_c4_1.jpg" alt="">
+						<img src="../img/rxr/img_c4_2.jpg" alt="">
+					</div>
+					<div class="btn_box"><a href="#"><span>더 많은 정보 보기<i></i></span></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	var senceAni = (function(){
+		Bgi.pageAnimation = true;
+		Bgi.element.$wrap.addClass('nav-on foot-on');
+		setWindowHeight();
+
+		var introtxt = $('.intro_page h3,.intro_page p').texts(),
+			$btn_c = $('.btn_c'),
+			$ip = $('.intro_page'),
+			$ytBtn = $('.btn_ytplay');
+
+		mtl = new TimelineMax;
+		mtl.set(introtxt, {opacity:0}).set($btn_c, {className:"+=ready"});
+		for (var i = 0, l = introtxt.length; i < l; i++) {
+			mtl.to(introtxt[i], Bgi.iDu, {opacity:1, ease:Power2.easeOut}, Math.random()*Bgi.iRa, "introtxt");
+		}
+		mtl.pause();
+
+		// Event
+		$('.btn_box a').on('click', function(e){
+			e.preventDefault();
+			alert('가이드 서비스 준비 중입니다.');
+		})
+		$btn_c.on('click', function(){
+			$ip.fadeOut();
+			introScrollBlock(true);
+		});
+		if(ytScript == false){ytScriptFire();};
+		$ytBtn.each(function(i){
+			$(this).attr('data-ytidx', i);
+		});
+		$ytBtn.on('click', function(){
+			var i = $(this).attr('data-ytidx'),
+				$this = $(this);
+			if($this.hasClass('ready')){
+				Bgi.ytPlayers[i].playVideo();
+			} else {
+				$this.after('<div id="yt-player'+i+'" class="ytplayer"></div>')
+				Bgi.ytPlayers[i] = new YT.Player('yt-player'+i, {
+					videoId: $this.attr('data-ytcode'),
+					events: {
+						'onReady': onYtPlayerReady,
+						'onStateChange': onPlayerStateChange
+					},
+					playerVars : {
+						origin: document.domain,
+						autoplay:'1',
+						controls:'1',
+						modestbranding:'1',
+						showinfo:'0',
+						rel:'0',
+						loop:'1',
+						disablekb:'1',
+						wmode:'transparent'
+					}
+				});
+				$this.addClass('ready');
+			}
+		});
+
+		//page in out
+		var startAnimation = function(){
+			mtl.seek(0).play();
+			introScrollBlock();
+			windowScrollTo(0);
+		};
+		var reverseAnimation = function(){
+			Bgi.pageAnimation = false;
+			mtl.clear();
+			mtl = null;
+			senceAni = null;
+			Bgi.ytPlayers = [];
+			//event clear
+			$btn_c.off('click');
+			$ip.off();
+			window.location.hash = Bgi.hash;
+		}
+
+		return {
+			aniOut : function(){reverseAnimation()},
+			aniIn : function (){startAnimation()}
+		};
+
+	})();
+	</script> 

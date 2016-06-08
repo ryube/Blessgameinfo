@@ -1,0 +1,75 @@
+
+/* transition */
+#nav *,
+
+#footer .btn_blhome, #footer .btn_blhome b {transition: all 1s cubic-bezier(.32,.18,.14,.98);}
+.bl_intro .btn_into *,
+.class .sec_01 .video .bg,
+.class .sec_01 .video .btn_ytplay  {transition: all .7s cubic-bezier(.32,.18,.14,.98);}
+
+.Explorer .contents_sld .slides li {transition: all .5s cubic-bezier(.32,.18,.14,.98);}
+.csld_holder .contents_sld {transition: all 1s cubic-bezier(.32,.18,.14,.98);}
+/* hover */
+u, i,
+.char span,
+:after, :before,
+.world .quick_link li *,
+.bl_intro .btn_into .bg,
+.sld_controls li *,
+.pop_people .btn_close,
+#nav .sns *,
+.intro_page .btn_c,
+.class .race a span,
+.intro_page .btn_c span {transition: all 0.5s cubic-bezier(.32,.18,.14,.98);}
+
+
+.world .quick_link:after,
+.flex-control-nav li *,
+.flex-control-nav li a:after,
+.flex-control-nav li a:before,
+.leaflet-marker-icon * {transition: all 0.25s cubic-bezier(0.75, 0, 0.25, 1);}
+
+
+.world .quick_link,
+.class .char_box .bg,
+.class .char_box span,
+.world .quick_link * {transition: all 2s cubic-bezier(0.75, 0, 0.25, 1);}
+#load_layer.ing .w {transition: all 1.5s cubic-bezier(.32,.18,.14,.98);}
+#load_layer.ing u {transition: 2s all 1s cubic-bezier(0.75, 0, 0.25, 1);}
+
+/* css reset ================================================================================== */
+
+/*
+font-size: 60px - 3.75rem
+font-size: 48px - 3rem
+font-size: 36px - 2.25rem
+font-size: 30px - 1.875rem
+font-size: 28px - 1.750rem
+font-size: 22px - 1.375
+font-size: 20px - 1.25rem
+font-size: 18px - 1.125em
+font-size: 16px - 1
+font-size: 15px - 0.938
+font-size: 14px - 0.875rem
+font-size: 13px - 0.813
+font-size: 12px - 0.75rem
+font-size: 11px - 0.68rem
+
+#ddd
+#fff
+#000
+
+30%
+80%
+100%
+
+#ddd
+#fff
+#000
+
+30%
+80%
+100%
+
+*/
+
