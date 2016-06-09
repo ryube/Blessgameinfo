@@ -1,0 +1,16 @@
+$.get( {
+	url: 'scene.html',
+	cache: false,
+	data: { character: 'hero'}
+}) 
+.done(function (response, status) { 
+	var html = response;
+
+	$(body).apppend(html);
+	$aaflkwejfkla
+	awfkajwlfk
+	
+
+} )
+.fail (function )
+.always(function )

@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<title>피망 - 대한민국 No.1 게임포털 피망!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;"/>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link type="text/css" rel="stylesheet" href="../../css/gameinfo.css">
+<script src="http://www.pmang.kr/global/javascript/jq/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../js/TweenMax.min.js"></script>
+<script src="http://www.pmang.kr/global/javascript/gamepub.js"></script>
+<script type="text/javascript" src="../../js/347_gameinfo.js"></script>
+</head>
+<!-- 
+	GNB Style Class = White"[default]" || black"black"
+	Camp Class = hieron || union
+ -->
+<body>
+
+<style>
+	em {color: red;}
+</style>
+<div class="test">
+	폭풍 속의 불씨들
+제5시대가 시작되고 어언 백여 년, 대륙 전토를 뒤흔드는 <em>거대한 전쟁</em>의 서막이 올랐다. 피할 수도 없고 피해서도 안되는 처절한 싸움이 시작됐다. <br />
+이 시대를 살아가는 여러 종족들은 저마다 다른 이유로 무기를 들고 전장에 나섰다.<br/>
+당신은 어느 편에 설 것인가? 무엇을 위해 목숨을 걸 것인가? 어떤 이야기를 만들어갈 것인가?<br />
+<button class="btn">버튼 리버스</button>
+<button class="btn1">버튼 play</button>
+</div>
+
+<script>
+	var t = $('.test').texts(),
+		twrods = t.length,
+		tl = new TimelineMax({});
+		console.log(tl)
+
+	function timeLineDone(a) {
+		console.log(a);
+	}
+	tl.set(t, {opacity:0});
+	for (var i = 0; i < twrods; i++) {
+		tl.to(t[i], 1, {marginLeft : "+=50", ease:Power2.easeOut }, "-=0.99")
+	};
+
+	tl.eventCallback("onUpdate", function() {
+		timeLineDone('onUpdate')
+	});
+	tl.eventCallback("onComplete", function() {
+		timeLineDone('onComplete')
+	});
+
+	tl.eventCallback("onReverseComplete", function() {
+		timeLineDone('onReverseComplete')
+	});
+	
+	$('.btn').on('click', function(){
+		tl.reverse();
+	})
+	$('.btn1').on('click', function(){
+		tl.play();
+	})
+</script>
+
+<!-- 개발 시 삭제 
+<style>#ui-helper {z-index: 99999;}</style>
+<script type="text/javascript">
+	$.getScript('http://ndl.ds.neowiz.com/~ji9/ui-helper/js/jquery.ui-helper.js');
+	$.u = {
+		theme: 'legacy', // [flat || mini || legacy]
+		color: '#e81818', // if theme:'flat' ex) [#000000 || red]
+		marginLeft: -600, // start left position
+		animate: false, // start then move left position animation
+		position: 'fixed', // [fixed || absolute || static]
+		top: 100, // panel top position
+		draggable: true, // [true || false]
+		movementX: false, // if draggable, only horizon movement
+		helper : [
+			{
+				title : '기본 동작',
+				fold : false, // start then, pane fold [true || false]
+				items : [
+					{
+						subject : 'GNB 스킨 변경 ',
+						description : '화이트 || 블랙 ',
+						input : 'button', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.bless_main').toggleClass('black')
+						}
+					},
+					{
+						subject : ' 유저 진영 없음 ',
+						description : '진영 선택',
+						input : 'button', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.article_login > .before').hide();
+							$('.article_login > .after').show();
+							$('body').removeClass('hieron union');
+						}
+					},
+					{
+						subject : ' 유저 진영 ',
+						description : '진영 선택',
+						input : 'button', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.article_login > .before').hide();
+							$('.article_login > .after').show();
+							$('body').addClass('hieron');
+						}
+					},
+					{
+						subject : ' 유저 진영 ',
+						description : '진영 선택',
+						input : 'button', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.article_login > .before').hide();
+							$('.article_login > .after').show();
+							$('body').addClass('union');
+						}
+					},
+					{
+						subject : '로그인 전 ',
+						description : '',
+						input : 'radio', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.article_login > .after').hide();
+							$('.article_login > .before').show();
+						}
+					},
+					{
+						subject : '로그인 후',
+						description : '',
+						input : 'radio', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.article_login > .before').hide();
+							$('.article_login > .after').show();
+						}
+					},
+					{
+						subject : '캐릭터 없음',
+						description : '',
+						input : 'radio', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.article_login .after .user').toggle();
+							$('.article_login .after .no_character').toggle();
+						}
+					},
+					{
+						subject : '확장 배너 없음',
+						description : '',
+						input : 'radio', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.extend_slider').addClass('off');
+							$('.wrap, .full_bg').css('background-image', '');
+						}
+					},
+					{
+						subject : '확장 배너 있슴',
+						description : '',
+						input : 'radio', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							$('.extend_slider').removeClass('off');
+							$('.wrap').css('background-image', 'url(http://file.pmang.kr/images/pmang/bless/ob/img/bg/bg_main_b.jpg)')
+						}
+					}
+
+				]
+			
+			},
+			{
+				title : '모달 팝업',
+				fold : false, // start then, pane fold [true || false]
+				items : [
+					{
+						subject : '모달 열기',
+						description : '',
+						input : 'radio', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							modalVideo('open', 'dpR6pb2vtHY');
+						}
+					},
+					{
+						subject : '모달 닫기',
+						description : '',
+						input : 'radio', // [radio || checkbox || button]
+						checked : false, // default checked option
+						run : function() {
+							modalVideo('close');
+						}
+					}
+					
+				]
+			}
+			
+		]
+	}
+</script>
+<!-- 개발 시 삭제 -->
+</body>
+</html>
