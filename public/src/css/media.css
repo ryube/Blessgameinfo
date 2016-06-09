@@ -1,7 +1,0 @@
-@media (min-width: 0px) and (max-width: 960px) {
-    .story .contents_sld {position: static; left: auto; top: auto;}
-    .story .contents_sld .slides {height: auto; overflow: hidden;}
-    .story .contents_sld .slides > li {height: auto;}
-    .story .content {position: static; left: auto; bottom: auto; height: auto;}
-
-}
