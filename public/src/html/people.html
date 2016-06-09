@@ -1,0 +1,122 @@
+	<div id="s1" class="people">
+		<div class="intro_page">
+			<div class="b_tbl"><div class="b_cell">
+				<h3>블레스 인물 관계도를 통해 각 인물의 정보와 <br />관계를 한 눈에 확인해 보실 수 있습니다.</h3>
+				<div class="txt">
+					<p>블레스 인물 관계도에서는 블레스 세계에서 만나게 되는 각 진영별 주요한 인물들의 상세한 정보와 인물들간의 관계를 확인하실 수 있습니다. </p>
+				</div>
+				<a class="btn_c"><span>계속 살펴보기</span></a>
+			</div></div>
+		</div>
+		<div id="people-map"></div>
+	</div>
+	<script>
+	var senceAni = (function(){
+		Bgi.pageAnimation = true;
+		Bgi.element.$wrap.addClass('nav-on foot-on');
+		setWindowHeight();
+		TweenMax.to(Bgi.element.$window, .5, {scrollTo : { y: 0, autoKill:true },	ease:  Expo.easeOut, autoKill: true, overwrite: 5});
+
+		// map init
+		var $people = $('.people'),
+			mapMinZoom = 18,
+			mapMaxZoom = 20;
+	
+		map = L.map('people-map', {
+			maxZoom: mapMaxZoom,
+			minZoom: mapMinZoom
+		})
+		
+		var mapBounds = new L.LatLngBounds(map.unproject([0, 3328], mapMaxZoom), map.unproject([3328, 0], mapMaxZoom));
+		
+		map.fitBounds(mapBounds);
+		map.setMaxBounds(mapBounds);
+		L.tileLayer('http://file.pmang.kr/images/pmang/bless/ob/img/gameinfo/people_tiles/{z}/pp_tile_{x}_{y}.png', {
+			minZoom: mapMinZoom, maxZoom: mapMaxZoom,
+			bounds: mapBounds,
+			attribution: '',
+			noWrap: true,
+			tms: false
+		}).addTo(map);
+
+		map.setView([85.05086, -179.99756], mapMaxZoom);
+
+		// marker Setting
+		var divIcon = [],
+			markers = [];
+
+		for (var i = 0, len = blPeopleMarker.length; i < len; i++) {
+			divIcon[i] = L.divIcon({
+				iconSize: blPeopleMarker[i].iconSize,
+				className: blPeopleMarker[i].className,
+				html : "<div class='holder'><span></span><u></u></div>",
+				attr : [
+					{name : "data-camp",value : blPeopleMarker[i].camp},
+					{name : "data-name",value : blPeopleMarker[i].name}
+				]
+			});
+			markers[i] = L.marker(map.unproject(blPeopleMarker[i].pos), {icon: divIcon[i]}).on('click', function(e){markerHandler(e)}).addTo(map);
+		};
+		var markerHandler = function(e){
+			map.setView(e.latlng, mapMaxZoom);
+		};
+
+		// element
+		var $marker = $('.leaflet-marker-icon');
+
+		// intro 
+		var introtxt = $('.intro_page h3,.intro_page p').texts(),
+			$btn_c = $('.btn_c'),
+			$ip = $('.intro_page');
+
+
+		mtl = new TimelineMax;
+		mtl.set(introtxt, {opacity:0}).set($btn_c, {className:"+=ready"});
+		for (var i = 0, l = introtxt.length; i < l; i++) {
+			mtl.to(introtxt[i], Bgi.iDu, {opacity:1, ease:Power2.easeOut}, Math.random()*Bgi.iRa, "introtxt");
+		}
+		mtl.pause();
+
+		// event
+		$btn_c.on('click', function(){
+			$ip.fadeOut();
+			introScrollBlock(true);
+		});
+		
+		$marker.off().on('click', function(e, move){
+			$marker.removeClass('on');
+			$(this).addClass('on');
+			var name = $(this).attr('data-name'),
+				camp = $(this).attr('data-camp');
+
+			if(camp && !move) {
+				if(name && blessPeople[camp][name]){
+					var data = blessPeople[camp][name]
+					popHtml(data, camp);
+				};
+			};
+		});
+		map.on('zoomend', function(e){
+			$people.attr('class', 'people zoom-lv'+map.getZoom());
+		});
+
+
+		//page in out 
+		var	startAnimation = function(){
+			mtl.seek(0).play();
+			introScrollBlock();
+			windowScrollTo(0);
+		};
+		var reverseAnimation = function(){
+			$marker.off('click');
+			$btn_c.off('click');
+			map.remove();
+			window.location.hash = Bgi.hash;
+		};
+
+		return {
+			aniOut : function(){reverseAnimation()},
+			aniIn : function (){startAnimation()}
+		};
+	})();
+	</script>

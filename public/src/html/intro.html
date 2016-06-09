@@ -1,0 +1,97 @@
+	<!-- <h3>intro</h3> -->
+	<div id="s1" class="section_01 bl_intro">
+		<p class="subtl chars">새로운 세대를 여는 MMORPG의 가치</p>
+		<h3 class="tl">
+			<span class="t b">b</span>
+			<span class="t l">l</span>
+			<span class="t e">e</span>
+			<span class="t s1">s</span>
+			<span class="t s2">s</span>
+			<span class="e-"></span>
+		</h3>
+		<a data-link="#story.html" class="btn_into btn-html">
+			<span class="bg"></span>
+			<span class="c"></span>
+			<span class="bar"><span class="b1"></span><span class="b2"></span></span>
+			<span class="t">Journey into The World</span>
+		</a>
+		<p class="txt chars">그대가 바로 이 세상의 운명을 바꿀 존재 &lt; 아나타바린 &gt;. 미래를 여는 열쇠가 되어 만들어갈 당신의 역사를 기대해 본다.</p>
+		<a href="http://bless.pmang.com/" target="_blank" class="btn_home"><u></u>home</a>
+	</div>
+	<script>
+	var senceAni = (function(){
+		//setting
+		Bgi.pageAnimation = true;
+		Bgi.element.$wrap.removeClass('nav-on foot-on');
+		setWindowHeight();
+
+		var	txt1 = $('.subtl').texts(),
+			txt2 = $('.tl .t'),
+			txt2_1 = $('.tl .e-'),
+			txt3 = $('.txt').texts(),
+			intoa = $('.btn_into'),
+			intoc = $('.btn_into .c'),
+			intot = $('.btn_into .t'),
+			bar = $('.bar');
+
+		mtl = new TimelineMax;
+		mtl.clear();
+
+		// timeline setting
+		mtl.set([txt1, txt2, txt2_1, txt3], {opacity:0})
+			.set([txt2_1], {marginLeft: 20})
+			.set('.tl .t', {opacity:0, top: -10})
+			.set(intoc, {borderWidth:150})
+			.set(intoa, {scale:0})
+			.set(bar, {rotationX:-90, rotationZ: 10})
+			.set(intot, {marginLeft:-20, opacity:0});
+
+		// timeline animation
+		mtl.to(intoa, 0.5, {scale:0.15})
+			.to(intoa, .15, {delay:0.25,opacity:0.5, repeat: 3})
+			.to(intoa, .15, {opacity:1})
+			.to(intoa, .8, {delay:1, scale:1}, "into")
+			.to(intoc, 0.5, {delay: .6, borderWidth:4}, "into")
+			.to(bar, 2, {rotationX:180, rotationZ:0}, "into2")
+			.to(intot, 2, {marginLeft:0, opacity:1, ease: Expo.easeOut}, "into2")
+			.set(intoa, {className:"+=mover btn-html"});
+
+		for (var i = 0, l = txt1.length; i < l; i++) {
+			mtl.to(txt1[i], 1, {opacity:1, ease:Power2.easeOut}, "into2+="+Math.random()*1, "txt1");
+		}
+
+		for (var i = 0, l = txt2.length; i < l; i++) {
+			mtl.to(txt2[i], 1, {opacity:1, top:0, ease:Power2.easeOut}, "into2-="+Math.random()*.5, "txt2");
+		}
+		mtl.to(txt2_1, 2, {opacity:1, marginLeft:0, ease:Power2.easeOut}, "into2", "txt2-1")
+			.to(txt2_1, 3, {rotationX: 360, ease:Power2.easeOut});
+		mtl.staggerTo(txt3, .2, {opacity:1, top:0, ease:Power2.easeOut}, 0.05,"into2");
+		// timeline animation 
+		mtl.pause();
+
+		//event
+		mtl.eventCallback("onComplete", function() {});
+		mtl.eventCallback("onReverseComplete", function() {
+			Bgi.pageAnimation = false;
+			mtl.clear();
+			mtl = null;
+			senceAni = null;
+			window.location.hash = Bgi.hash;
+		});
+
+		
+		//page in out
+		var startAnimation = function(){
+			mtl.seek(0).play();
+		};
+		var reverseAnimation = function(){
+			mtl.timeScale(3).tweenTo(0);
+		};
+
+		return {
+			aniOut : function(){reverseAnimation()},
+			aniIn : function (){startAnimation()}
+		};
+
+	})();
+	</script>
