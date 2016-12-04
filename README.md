@@ -1,6 +1,6 @@
 ## Bless Gameinfomation
 
-블래스 게임 소개 페이지 입니다.  [Link](http://ryube.github.io/Blessgameinfo/public/dist/html){:target="_blank"}
+블래스 게임 소개 페이지 입니다.  [Link](http://ryube.github.io/Blessgameinfo/public/dist/html)
 
 ### 사용된 라이브러리
 
